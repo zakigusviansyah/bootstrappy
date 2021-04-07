@@ -10,11 +10,13 @@
             <div class='content'>
                 <%= @threads.content %>
             </div>
+            <% if user_signed_in? %>
             <% if policy(@threads).edit? %>
             <div class='action-edit'>
                 <%= link_to 'Edit', edit_forum_thread_path(@threads), class: 'btn' %>
                 <%= link_to 'Delete', forum_thread_path(@threads), method: :delete, data: {confirm: "Apakah Data Ingin Dihapus?"}, class: 'btn' %>
             </div>
+            <% end %>
             <% end %>
         </div>
         <% if @threads.forum_posts.any? %>

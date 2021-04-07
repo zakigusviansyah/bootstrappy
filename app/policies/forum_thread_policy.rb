@@ -8,4 +8,7 @@ class ForumThreadPolicy < ApplicationPolicy
 	def destroy?
 		user.admin?
 	end
+	def pin?
+		user.admin?
+	end
 end

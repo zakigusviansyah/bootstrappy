@@ -41,6 +41,7 @@ class ForumThreadsController < ApplicationController
 		@threads = ForumThread.friendly.find(params[:id])
 		@threads.pin!
 		redirect_to root_path
+		authorize @threads
 	end
 	def edit
 		@threads = ForumThread.friendly.find(params[:id])

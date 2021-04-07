@@ -20,10 +20,13 @@
             <div class='content'>
                 <%= truncate t.content, length: 150 %>
             </div>
-
+            <% if user_signed_in? %>
+            <% if policy(@threads).pin? %>
             <div class='action'>
                 <%= link_to 'Pin It', pin_forum_thread_path(t), class: 'btn', method: :put %>
             </div>
+            <% end %>
+            <% end %>
             <div class='count'>
                 <%= t.forum_posts_count %> obrolan
             </div>
