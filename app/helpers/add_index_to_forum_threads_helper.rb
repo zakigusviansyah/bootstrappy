@@ -1,0 +1,2 @@
+module AddIndexToForumThreadsHelper
+end
